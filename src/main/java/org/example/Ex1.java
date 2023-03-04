@@ -8,6 +8,10 @@ public class Ex1 {
      * @return: tổng chi phí cuộc gọi
      */
     public static double DummyTel(int startTime, int totalTime) {
+        // -1 nghĩa là đầu vào không hợp lệ
+        if (startTime < 0 || startTime > 23 || totalTime < 0) {
+            return -1;
+        }
         double totalMoney = totalTime * 0.5;
         if ((startTime >= 18 && startTime <= 23) || (startTime >= 0 && startTime <= 7)) {
             totalMoney /= 2;
